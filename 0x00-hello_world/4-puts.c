@@ -2,7 +2,7 @@
 /**
  * main - Entry point
  *
- * Description: Write a C program that prints exactly Programming is like building a multilingual puzzle, followed by a new line.
+ * Description: Write a C program that prints the line.
  * puts():a command to output a string
  *
  * Return: Always 0 (Success)
