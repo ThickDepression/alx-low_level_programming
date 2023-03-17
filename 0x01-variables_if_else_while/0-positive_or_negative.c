@@ -3,7 +3,11 @@
 #include <time.h>
 /* more headers goes there */
 
-/* betty style doc for function main goes there */
+/** 
+ * main entery point
+ * return always 1 (success)
+ *
+ */
 int main(void)
 {
 	int n;
@@ -13,15 +17,15 @@ int main(void)
 	/* your code goes there */
 	if (n > 0)
 	{
-		printf("%d is positive", n);
+		printf("%d is positive\n", n);
 	}
 	else if (n < 0)
 	{
-		printf("%d is negative", n);
+		printf("%d is negative\n", n);
 	}
 	else
 	{
-		printf("%d is zerp", n);
+		printf("%d is zero\n", n);
 	}
 	return (0);
 }
