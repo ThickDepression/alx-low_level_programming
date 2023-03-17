@@ -1,13 +1,12 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
-/* more headers goes there */
-
-/** 
- * main entery point
- * return always 1 (success)
+/**
+ *main -Entry point
  *
+ * Return: Always 0 (succses)
  */
+
 int main(void)
 {
 	int n;
