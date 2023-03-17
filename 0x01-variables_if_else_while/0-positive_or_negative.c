@@ -13,15 +13,15 @@ int main(void)
 	/* your code goes there */
 	if (n > 0)
 	{
-		printf("is positive");
+		printf(n" is positive");
 	}
 	else if (n < 0)
 	{
-		printf("is negative");
+		printf(n" is negative");
 	}
 	else
 	{
-		printf("is zerp");
+		printf(n" is zerp");
 	}
 	return (0);
 }
