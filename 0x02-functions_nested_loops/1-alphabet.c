@@ -6,9 +6,14 @@
  * Return: Always 0.
  */
 
-int main(void)
+void print_alphabet(void)
 {
-print_alphabet();
-_putchar('\n');
-return (0);
+  char alphabets[] = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+  int i = 0;
+  while (i < 25)
+    {
+      _putchar(alphabets[i]);
+      ++i;
+    }
+  _putchar('\n');
 }
