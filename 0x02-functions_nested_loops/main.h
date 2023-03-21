@@ -50,7 +50,7 @@ void print_alphabet(void)
   int i = 0;
   while (i < 26)
     {
-      write(1, &alphabets[i], 1);
+      _putchar(alphabets[i]);
       ++i;
     }
 }
