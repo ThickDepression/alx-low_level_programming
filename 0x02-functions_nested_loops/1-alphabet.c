@@ -1,19 +1,18 @@
 #include "main.h"
 
 /**
- * main - check the code
+ * print_alphabet - prints alphabet in lowercase
  *
- * Return: Always 0.
+ * Return: void
  */
 
 void print_alphabet(void)
 {
-  char alphabets[] = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
-  int i = 0;
-  while (i < 25)
+  int i;
+
+  for (i = 97; i <= 122; i++)
     {
-      _putchar(alphabets[i]);
-      ++i;
+      _putchar(i);
     }
   _putchar('\n');
 }
