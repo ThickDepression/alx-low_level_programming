@@ -13,7 +13,7 @@ printf("Infinite loop incoming :(\n");
 
 i = 0;
 
-while (i < 0)
+while (i < 0) /**the line that caused the issue*/
 {
 putchar(i);
 }
