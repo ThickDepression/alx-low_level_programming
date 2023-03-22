@@ -1,27 +1,29 @@
-#include <stdio.h>
 #include "main.h"
 
 /**
-* main - takes a date and prints how many days are left in the year, taking
-* leap years into account
-* Return: 0
-*/
+ * largest_number - returns the largest of 3 numbers
+ * @a: first integer
+ * @b: second integer
+ * @c: third integer
+ * Return: largest number
+ */
 
-int main(void)
+int largest_number(int a, int b, int c)
 {
-    int month;
-    int day;
-    int year;
+int largest;
 
-    month = 4;
-    day = 01;
-    year = 1997;
+if (a > b && a > c)
+{
+largest = a;
+}
+else if (b > a && b > c)
+{
+largest = b;
+}
+else
+{
+largest = c;
+}
 
-    printf("Date: %02d/%02d/%04d\n", month, day, year);
-
-    day = convert_day(month, day);
-
-    print_remaining_days(month, day, year);
-
-    return (0);
+return (largest);
 }
