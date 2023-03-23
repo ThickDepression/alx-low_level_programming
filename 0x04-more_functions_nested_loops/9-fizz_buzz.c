@@ -21,17 +21,18 @@ putchar(32);
 else if (i % 5 == 0 && i % 3 != 0)
 {
 printf("Buzz");
-putchar(32);
 }
 else if (i % 3 == 0 && i % 5 == 0)
 {
 printf("FizzBuz ");
-putchar(32);
 }
 else
 {
 printf("%d", i);
-putchar(32);
+}
+if (i != 100);
+{
+printf(" ");
 }
 }
 printf("\n");
