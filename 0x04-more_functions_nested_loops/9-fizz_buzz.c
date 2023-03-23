@@ -15,19 +15,23 @@ for (i = 1; i <= 100; ++i)
 {
 if (i % 3 == 0 && i % 5 != 0)
 {
-printf("Fizz ");
+printf("Fizz");
+putchar(32);
 }
 else if (i % 5 == 0 && i % 3 != 0)
 {
-printf("Buzz ");
+printf("Buzz");
+putchar(32);
 }
 else if (i % 3 == 0 && i % 5 == 0)
 {
-printf("FizzBuzz ");
+printf("FizzBuz ");
+putchar(32);
 }
 else
 {
-printf("%d ", i);
+printf("%d", i);
+putchar(32);
 }
 }
 printf("\n");
