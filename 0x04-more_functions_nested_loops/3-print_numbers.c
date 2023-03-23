@@ -9,6 +9,7 @@
 void print_numbers(void)
 {
 int i = 48;
+
 do
 {
 _putchar(i);
