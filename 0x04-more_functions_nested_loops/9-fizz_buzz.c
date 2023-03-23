@@ -16,7 +16,6 @@ for (i = 1; i <= 100; ++i)
 if (i % 3 == 0 && i % 5 != 0)
 {
 printf("Fizz");
-putchar(32);
 }
 else if (i % 5 == 0 && i % 3 != 0)
 {
