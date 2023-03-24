@@ -1,31 +1,26 @@
 #include "main.h"
-
 /**
- *print_triangle - prints a triangle
- *@size: size of triangle
- *Return: ye
+ * print_triangle - prints a triangle
+ * @size: size of triangle
  */
-
 void print_triangle(int size)
 {
-int hashtag, space;
+int height;
+int width;
+int draw;
 
 if (size > 0)
 {
-for (hashtag = 1; hashtag <= size; hashtag++)
+for (height = 1; height <= size; height++)
 {
-for (space = size - hashtag; space >= 1; space--)
-{
-_putchar(32);
-}
-do {
-_putchar(35);
-} while (hashtag <= size - space);
+for (width = 1; width <= (size - height); width++)
+_putchar(' ');
+for (draw = 1; draw <= height; draw++)
+_putchar('#');
+
 _putchar('\n');
 }
 }
 else
-{
 _putchar('\n');
-}
 }
