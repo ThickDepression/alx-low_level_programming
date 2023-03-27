@@ -16,9 +16,9 @@ if (a == 0 || a % 2 == 0)
 _putchar(str[a]);
 a++;
 }
- else if (a == i) 
+else if (str[a] == '\0')
 {
-continue;
+break;
 }
 else
 {
