@@ -21,10 +21,11 @@ _putchar('\n');
 }
 else
 {
-for (nsnd = (len - 1) / 2; nsnd < len; nsnd++)
+for (nsnd = (len - 1) / 2; nsnd < len - 1; nsnd++)
 {
 _putchar(str[nsnd + 1]);
 }
+_putchar('\n');
 }
 }
 
