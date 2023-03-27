@@ -20,7 +20,7 @@ else
 {
 a++;
 }
-} while (a < i);
+} while (a <= i);
 _putchar('\n');
 }
 
