@@ -8,17 +8,11 @@
 
 void puts2(char *str)
 {
-int i, j;
+int i;
 
-for (i = 0; str[i] == '\0'; i++)
+for (i = 0; str[i] != '\0'; i += 2)
 {
-/* skip over null characters at beginning of string */
+_putchar(str[i]);
 }
-
-for (j = i; str[j] != '\0'; j += 2)
-{
-_putchar(str[j]);
-}
-
 _putchar('\n');
 }
