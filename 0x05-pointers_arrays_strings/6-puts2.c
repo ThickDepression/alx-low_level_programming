@@ -8,40 +8,17 @@
 
 void puts2(char *str)
 {
-int i = _strlen(str);
-int a = 0;
-do {
-if (a == 0 || a % 2 == 0)
+int i, j;
+
+for (i = 0; str[i] != '\0' && str[i] == '\0'; i++)
 {
-_putchar(str[a]);
-a++;
+/* skip over null characters at beginning of string */
 }
-else if (str[a] == '\0')
+
+for (j = i; str[j] != '\0'; j += 2)
 {
-break;
+_putchar(str[j]);
 }
-else
-{
-a++;
-}
-} while (a < i);
+
 _putchar('\n');
-}
-
-
-/**
- *_strlen - counts characters
- *@s: value
- *Return: counter
- */
-
-int _strlen(char *s)
-{
-int counter = 0;
-while (*s != '\0')
-{
-counter++;
-s++;
-}
-return (counter);
 }
