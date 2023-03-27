@@ -25,7 +25,6 @@ for (nsnd = (len - 1) / 2; nsnd < len; nsnd++)
 {
 _putchar(str[nsnd + 1]);
 }
-_putchar('\n');
 }
 }
 
