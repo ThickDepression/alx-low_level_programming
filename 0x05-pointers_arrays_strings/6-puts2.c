@@ -16,11 +16,15 @@ if (a == 0 || a % 2 == 0)
 _putchar(str[a]);
 a++;
 }
+ else if (a == i) 
+{
+continue;
+}
 else
 {
 a++;
 }
-} while (a <= i);
+} while (a < i);
 _putchar('\n');
 }
 
