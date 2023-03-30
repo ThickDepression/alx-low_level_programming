@@ -19,6 +19,13 @@ if (s1[char1] == '\0' || s2[char2] == '\0')
 {
 return (0);
 }
+else
+{
+if (s1[char1] < s2[char2])
+return (-15);
+if (s1[char1] > s2[char2])
+return (15);
+}
 }
 else
 {
