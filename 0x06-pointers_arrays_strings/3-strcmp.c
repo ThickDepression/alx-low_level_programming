@@ -13,12 +13,9 @@ int char1, char2;
 char1 = char2 = 0;
 if (s1[char1] == s2[char2])
 {
-if (s1[char1] != '\0' || s2[char2] != '\0')
-{
 char1++;
 char2++;
-}
-else
+if (s1[char1] == '\0' || s2[char2] == '\0')
 {
 return (0);
 }
