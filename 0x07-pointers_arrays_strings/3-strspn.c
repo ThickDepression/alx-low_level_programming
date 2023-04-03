@@ -22,7 +22,7 @@ if (accept[i] == s[j])
 counter++;
 g++;
 }
-else if (accept[i] != s[j] && g > 0)
+else if (g > 0)
 {
 break;
 }
