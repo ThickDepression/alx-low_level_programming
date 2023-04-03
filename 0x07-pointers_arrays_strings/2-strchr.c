@@ -9,7 +9,7 @@
 
 char *_strchr(char *s, char c)
 {
-const char *ps = s;
+char *ps = s;
 while (*ps != '\0')
 {
 if (*ps == c)
@@ -18,5 +18,5 @@ return (ps);
 }
 ps++;
 }
-return (NULL);
+return ('\0');
 }
