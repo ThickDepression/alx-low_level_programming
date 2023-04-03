@@ -14,12 +14,13 @@ while (*ps)
 {
 if (*ps == c)
 {
-  return (ps);
+return (ps);
 }
 ps++;
 }
 if (!c)
 {
 return (ps);
+}
 return (0);
 }
