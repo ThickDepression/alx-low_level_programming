@@ -10,38 +10,15 @@ unsigned int _strspn(char *s, char *accept)
 {
 int i, j;
 int counter = 0;
-for (i = 0; accept[i] != '\0'; i++)
+for (i = 0; s[i] != '\0'  && i == counter; i++)
 {
-int g = 0;
-for (j = 0; s[j] != '\0'; j++)
+for (j = 0; accept[j] != '\0'; j++)
 {
-if (accept[i] == s[j])
-{
-counter++;
-g++;
-}
-else if (g > 0)
-{
-break;
-}
-}
-}
-return (counter);
-}
-
-/**
- *_strlen - counts
- *@s: string or smtg
- *Return: counter
- */
-
-int _strlen(char *s)
-{
-int counter = 0;
-while (*s != '\0')
+if (accept[j] == s[i])
 {
 counter++;
-s++;
+}
+}
 }
 return (counter);
 }
