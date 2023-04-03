@@ -14,7 +14,7 @@ while (*ps != '\0')
 {
 if (*ps == c)
 {
-return (ps);
+  return ((char *) ps);
 }
 ps++;
 }
