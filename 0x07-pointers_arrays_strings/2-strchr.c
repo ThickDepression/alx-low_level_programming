@@ -18,5 +18,5 @@ return (ps);
 }
 ps++;
 }
-return ('\0');
+return ("NULL");
 }
