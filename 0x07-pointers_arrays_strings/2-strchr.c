@@ -10,13 +10,16 @@
 char *_strchr(char *s, char c)
 {
 char *ps = s;
-while (*ps != '\0')
+while (*ps)
 {
 if (*ps == c)
 {
-  return ((char *) ps);
+  return (ps);
 }
 ps++;
 }
-return ('\0');
+if (!c)
+{
+return (ps);
+return (0);
 }
