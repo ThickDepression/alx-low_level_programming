@@ -7,29 +7,9 @@
 
 void _print_rev_recursion(char *s)
 {
-int len = _strlen(s);
-int i;
-for (i = 0; i < len; len--)
+if (*s)
 {
-_putchar(s[len]);
-}
-_putchar('\n');
-}
-
-
-/**
- *_strlen - counts
- *@s: string or smtg
- *Return: counter
- */
-
-int _strlen(char *s)
-{
-int counter = 0;
-while (*s != '\0')
-{
-counter++;
-s++;
-}
-return (counter);
+_print_rev_recursion(s + 1);
+_putchar(*s);  
+} 
 }
