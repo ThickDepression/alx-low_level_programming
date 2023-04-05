@@ -7,6 +7,8 @@
  * Return: the square root of n, or -1 if n does not have a natural square root
  */
 
+int do_sqrt_recursion(int n, int guess);
+
 int _sqrt_recursion(int n)
 {
 if (n < 0)
