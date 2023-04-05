@@ -13,6 +13,7 @@ for (i = 0; i < len; len--)
 {
 _putchar(s[len]);
 }
+_putchar('\n');
 }
 
 
