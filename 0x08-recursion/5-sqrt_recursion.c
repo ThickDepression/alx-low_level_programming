@@ -2,8 +2,8 @@
 
 /**
  * _sqrt_recursion - Returns the natural square root of a number
- * @n: the number to calculate its square root
- *
+ *@n: the number to calculate its square root
+ *@guess: the current guess for the square root
  * Return: the square root of n, or -1 if n does not have a natural square root
  */
 
