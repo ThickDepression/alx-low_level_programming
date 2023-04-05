@@ -1,43 +1,48 @@
 #include "main.h"
 
 /**
- *_sqrt_recursion - a fct returns the natural square root of a number.
- *@n: the number examened
- *Return: returns sqrt
+ * _sqrt_recursion - Returns the natural square root of a number
+ * @n: the number to calculate its square root
+ *
+ * Return: the square root of n, or -1 if n does not have a natural square root
  */
 
 int _sqrt_recursion(int n)
 {
-if (n == 0 || n == 1)
-{
-return (n);
-}
-else if (n < 0)
+if (n < 0)
 {
 return (-1);
 }
+else if (n == 0 || n == 1)
+{
+return (n);
+}
 else
 {
-return (dotherootmath(n, 1));
+return (do_sqrt_recursion(n, 1));
 }
 }
 
 /**
- *dotherootmath - a function that finds if the num got a sqrt
- *@x: number we want its root
- *@y: root of x
- *Return: return the value
+ * do_sqrt_recursion - Recursive helper function for _sqrt_recursion
+ * @n: the number to calculate its square root
+ * @guess: the current guess for the square root
+ *
+ * Return: the square root of n, or -1 if n does not have a natural square root
  */
 
-int dotherootmath(int x, int y)
+int do_sqrt_recursion(int n, int guess)
 {
-if (y * y < x)
+if (guess * guess == n)
 {
-return (dotherootmath(x, y + 1));
+return (guess);
 }
-if (y * y > x)
+else if (guess * guess < n)
+{
+return (do_sqrt_recursion(n, guess + 1));
+}
+else
 {
 return (-1);
 }
-return (y);
 }
