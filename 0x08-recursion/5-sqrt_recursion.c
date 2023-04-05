@@ -33,7 +33,7 @@ int dotherootmath(int x, int y)
 {
 if (y * y < x)
 {
-return (dothemath(x, y + 1));
+return (dotherootmath(x, y + 1));
 }
 if (y * y > x)
 {
