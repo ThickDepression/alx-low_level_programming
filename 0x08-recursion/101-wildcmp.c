@@ -17,10 +17,6 @@ if (*s1 == *s2)
 {
 return (_checker(s1 + 1, s2 + 1));
 }
-else if ((*s2 == '*' && *s1 != '\0'))
-{
-return (_checker(s1 + 1, s2 + 1));
-}
 else if (*s2 == '*')
 {
 return (_checker(s1, s2 + 1) || _checker(s1 + 1, s2));
