@@ -10,3 +10,4 @@ int _strlen(char *s);
 int dotherootmath(int x, int y);
 int is_palindrome(char *s);
 int wildcmp(char *s1, char *s2);
+int _str_len(char *s);
