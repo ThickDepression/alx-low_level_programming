@@ -10,29 +10,11 @@
 
 char *_strcpy(char *dest, char *src)
 {
-int n;
-int i = _strlen(src);
-
-for (n = 0; n <= i; n++)
+int i;
+for (i = 0; src[i] != '\0'; i++)
 {
-dest[n] = src[n];
+dest[i] = src[i];
 }
+dest[i] = '\0';
 return (dest);
-}
-
-/**
- *_strlen - counts
- *@s: string or smtg
- *Return: counter
- */
-
-int _strlen(char *s)
-{
-int counter = 0;
-while (*s != '\0')
-{
-counter++;
-s++;
-}
-return (counter);
 }
