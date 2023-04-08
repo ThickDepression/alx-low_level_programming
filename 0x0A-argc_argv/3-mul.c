@@ -20,7 +20,6 @@ return (1);
 }
 else
 {
-printf("%d\n", result);
-return (0);
+return (printf("%d\n", result));
 }
 }
