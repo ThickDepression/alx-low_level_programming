@@ -18,5 +18,6 @@ if (argc != 3)
 printf("Error\n");
 return (1);
 }
-return (printf("%d\n", result));
+printf("%d\n", result);
+return (0);
 }
