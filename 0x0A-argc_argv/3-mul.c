@@ -50,14 +50,12 @@ return (n);
 
 int main(int argc __attribute__((unused)), char *argv[])
 {
-if (!argv[0])
+if (argc < 2 || argc > 3)
 {
-printf("Error");
+printf("Error\n");
 return (1);
 }
-else
-{
 printf("%d\n", _atoi(argv[1]) * _atoi(argv[2]));
 return (0);
-}
+
 }
