@@ -16,7 +16,7 @@ int result = 0;
 if (argc == 0)
 {
 printf("%d\n", 0);
-return (0);
+return (1);
 }
 for (i = 1; i < argc; i++)
 {
