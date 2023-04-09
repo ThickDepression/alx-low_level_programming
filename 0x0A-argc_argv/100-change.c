@@ -11,23 +11,21 @@ int centfinder(int n);
 
 int main(int argc, char *argv[])
 {
-	int num;
-	int count;
-
-	if (argc != 2)
+	if (argc == 2)
+	{
+		if (atoi(argv[1]) < 0)
+		{
+		printf("0\n");
+		return (0);
+		}
+		printf("%d\n", centfinder(atoi(argv[1])));
+		return (0);
+	}
+	else
 	{
 		printf("Error\n");
 		return (1);
 	}
-	num = atoi(argv[1]);
-	if (num < 0)
-	{
-		printf("0\n");
-		return (0);
-	}
-	count = centfinder(num);
-	printf("%i\n", count);
-	return (0);
 }
 /**
  *centfinder - finds the min of change
