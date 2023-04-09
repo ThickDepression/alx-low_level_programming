@@ -16,6 +16,7 @@ int main(int argc, char *argv[])
 		if (atoi(argv[1]) < 0)
 		{
 		printf("0\n");
+		return (0);
 		}
 		printf("%d\n", centfinder(atoi(argv[1])));
 		return (0);
