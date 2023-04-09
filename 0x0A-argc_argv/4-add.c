@@ -15,7 +15,7 @@ int i;
 int result = 0;
 for (i = 1; i < argc; i++)
 {
-if (isdigit(*argv[i]) || (*argv[i] == '-' && isdigit(*(argv[i] + 1))))
+if (isdigit(*argv[i]))
 {
 result += atoi(argv[i]);
 }
