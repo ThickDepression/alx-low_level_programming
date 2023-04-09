@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
 
 /**
  *main - main function
@@ -8,24 +7,25 @@
  *@argv: arg vector
  *Return: 0 for success
  */
-
 int main(int argc, char *argv[])
 {
 	int i;
-	int result = 0;
+	int sum = 0;
 
 	for (i = 1; i < argc; i++)
 	{
-		if (isdigit(*argv[i]))
-		{
-			result += atoi(argv[i]);
-		}
-		else
+		char *end;
+		long val = strtol(argv[i], &end, 10);
+
+		if (*end != '\0')
 		{
 			printf("Error\n");
 			return (1);
 		}
+
+		sum += val;
 	}
-	printf("%d\n", result);
+
+	printf("%d\n", sum);
 	return (0);
 }
