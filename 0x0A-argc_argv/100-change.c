@@ -1,14 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int centfinder(int n);
+int coinCounter(int n);
 /**
  *main - main function
  *@argc: arg count
  *@argv: arg vector
  *Return: 0 for success
  */
-
 int main(int argc, char *argv[])
 {
 	if (argc != 2)
@@ -19,16 +18,15 @@ int main(int argc, char *argv[])
 	{
 		return (printf("0\n"), 0);
 	}
-	printf("%d\n", centfinder(atoi(argv[1])));
+	printf("%d\n", coinCounter(atoi(argv[1])));
 	return (0);
 }
 /**
- *centfinder - finds the min of change
+ *coinCounter - finds the min of change
  *@n: num passed from main
  *Return: returns the count
  */
-
-int centfinder(int n)
+int coinCounter(int n)
 {
 	int count = 0;
 
@@ -39,27 +37,27 @@ int centfinder(int n)
 	if (n >= 25)
 	{
 		count++;
-		count += centfinder(n - 25);
+		count += coinCounter(n - 25);
 	}
 	else if (n >= 10)
 	{
 		count++;
-		count += centfinder(n - 10);
+		count += coinCounter(n - 10);
 	}
 	else if (n >= 5)
 	{
 		count++;
-		count += centfinder(n - 5);
+		count += coinCounter(n - 5);
 	}
 	else if (n >= 2)
 	{
 		count++;
-		count += centfinder(n - 2);
+		count += coinCounter(n - 2);
 	}
 	else if (n >= 1)
 	{
 		count++;
-		count += centfinder(n - 1);
+		count += coinCounter(n - 1);
 	}
 	return (count);
 }
