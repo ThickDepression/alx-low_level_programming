@@ -1,4 +1,4 @@
-#include "main.h"
+	#include "main.h"
 #include <stdlib.h>
 
 int _strlen(char *s);
@@ -12,14 +12,14 @@ char *_strcpy(char *dest, char *src);
 
 char *_strdup(char *str)
 {
-	int n = _strlen(str) + 1;
+	int n;
 	char *p;
 
 	if (str == NULL)
 	{
 		return (NULL);
 	}
-
+	n = _strlen(str) + 1;
 	p = (char *)malloc(n * sizeof(char));
 	if (p == NULL)
 	{
