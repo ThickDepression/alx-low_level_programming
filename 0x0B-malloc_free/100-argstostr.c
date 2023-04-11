@@ -3,17 +3,17 @@
 
 int _strlen(char *s);
 
-/*
- *argstostr - 
- *@ac:
- *@av:
- *Return:
+/**
+ *argstostr - a function that concatenates
+ *@ac: argument count
+ *@av: argument vector
+ *Return: p
  */
 
 char *argstostr(int ac, char **av)
 {
 	char *p;
-	int n = 0, i, j;
+	int n = 0, i, j, k = 0;
 
 	if (ac == 0 || av == NULL)
 	{
@@ -28,16 +28,15 @@ char *argstostr(int ac, char **av)
 	{
 		return (NULL);
 	}
-	
 	for (i = 0; i < ac; i++)
 	{
 		for (j = 0; av[i][j]; j++)
 		{
-			p[n++] = av[i][j];
+			p[k++] = av[i][j];
 		}
-		p[n++] = '\n';
+		p[k++] = '\n';
 	}
-	p[n] = '\0';	
+	p[k] = '\0';
 	return (p);
 }
 
