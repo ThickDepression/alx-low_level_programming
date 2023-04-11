@@ -12,14 +12,16 @@ char *_strcpy(char *dest, char *src);
 
 char *_strdup(char *str)
 {
-
 	int n = _strlen(str) + 1;
-	char *p = (char *)malloc(n * sizeof(char));
+	char *p;
 
 	if (str == NULL)
 	{
 		return (NULL);
 	}
+
+	p = (char *)malloc(n * sizeof(char));
+
 	_strcpy(p, str);
 	return (p);
 }
@@ -53,6 +55,10 @@ char *_strcpy(char *dest, char *src)
 {
 	int i;
 
+	if (src == NULL)
+	{
+		return (NULL);
+	}
 	for (i = 0; src[i] != '\0'; i++)
 	{
 		dest[i] = src[i];
