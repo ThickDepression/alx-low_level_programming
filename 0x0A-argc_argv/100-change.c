@@ -1,63 +1,45 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int coinCounter(int n);
 /**
  *main - main function
- *@argc: arg count
- *@argv: arg vector
+ *@argc: argument vount
+ *@argv: argument vector
  *Return: 0 for success
  */
+
 int main(int argc, char *argv[])
 {
+	int ct;
+	int cn[5] = {25, 10, 5, 2, 1};
+	int count[5] = {0};
+	int i;
+	int j;
+	int total_count = 0;
+
 	if (argc != 2)
 	{
-		return (printf("Error\n"), 1);
+		printf("Error\n");
+		return (1);
 	}
-	if (atoi(argv[1]) < 0)
-	{
-		return (printf("0\n"), 0);
-	}
-	printf("%d\n", coinCounter(atoi(argv[1])));
-	return (0);
-}
-/**
- *coinCounter - finds the min of change
- *@n: num passed from main
- *Return: returns the count
- */
-int coinCounter(int n)
-{
-	int count = 0;
+	ct = atoi(argv[1]);
 
-	if (n == 0)
+	if (ct < 0)
 	{
+		printf("0\n");
 		return (0);
 	}
-	if (n >= 25)
+
+	for (i = 0; i < 5 && ct >= 1; i++)
 	{
-		count++;
-		count += coinCounter(n - 25);
+		count[i] = ct / cn[i];
+		ct %= cn[i];
 	}
-	else if (n >= 10)
+	for (j = 0; j < 5; j++)
 	{
-		count++;
-		count += coinCounter(n - 10);
+		total_count += count[j];
 	}
-	else if (n >= 5)
-	{
-		count++;
-		count += coinCounter(n - 5);
-	}
-	else if (n >= 2)
-	{
-		count++;
-		count += coinCounter(n - 2);
-	}
-	else if (n >= 1)
-	{
-		count++;
-		count += coinCounter(n - 1);
-	}
-	return (count);
+
+	printf("%d\n", total_count);
+	return (0);
 }
