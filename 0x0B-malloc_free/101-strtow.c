@@ -1,107 +1,101 @@
-#include "main.h"
 #include <stdlib.h>
+#include "main.h"
 
-int _strlen(char *s);
-char *_strncpy(char *dest, char *src, int n);
+int lenofword(char *str);
+int word_counter(char *str);
 
 /**
- *strtow - a function that splits a string into p.
+ *strtow - a function that splits a string into words.
  *@str: string to be splitted
- *Return: pointer
+ *Return: a function that splits a string into words.
  */
 
 char **strtow(char *str)
 {
-	int i, j;
-	char **p;
-	int n, count = 0;
-	int m, len = 0;
+	char **ptr;
+	int i = 0, words, w, letters, l;
 
-	if (str == NULL || *str == '\0')
+	if (str == NULL || str[0] == '\0')
 	{
 		return (NULL);
 	}
-	n = _strlen(str);
-	for (i = 0; i < n; i++)
+	words = word_counter(str);
+	if (words == 0)
 	{
-		if (str[i] != ' ' && (i == 0 || str[i - 1] == ' '))
-		{
-			count++;
-		}
+	return (NULL);
 	}
-	p = (char **)malloc((count + 1) * sizeof(char *));
-	if (p == NULL)
+	ptr = malloc(sizeof(char *) * (words + 1));
+	if (ptr == NULL)
 	{
 		return (NULL);
 	}
-	for (i = 0, j = 0; str[i]; i++)
+	for (w = 0; w < words; w++)
 	{
-		if (str[i] != ' ')
+		while (str[i] == ' ')
 		{
-			if (i == 0 || str[i - 1] == ' ')
-			{
-				for (m = i; str[m] && str[m] != ' '; m++)
-				{
-					len++;
-				}
-				p[j] = malloc((len + 1) * sizeof(char));
-				if (p[j] == NULL)
-				{
-					for (m = 0; m < j; m++)
-					{
-						free(p[m]);
-					}
-				free(p);
-				return (NULL);
-				}
+			i++;
+		}
+		letters = lenofword(str + i);
+		ptr[w] = malloc(sizeof(char) * (letters + 1));
+		if (ptr[w] == NULL)
+		{
+		for (; w >= 0; w--)
+		{
+			free(ptr[w]);
+		}
+			free(ptr);
+			return (NULL);
+		}
+		for (l = 0; l < letters; l++)
+		{
+			*(ptr[w] + l) = *(str + i++);
+		}
+		*(ptr[w] + l) = '\0';
+	}
+	*(ptr + w) = NULL;
+	return (ptr);
+}
 
-			_strncpy(p[j], &str[i], len);
-			p[j][len] = '\0';
-			j++;
-			}
+/**
+ *lenofword - determines len
+ *@str: string to be examined
+ *Return: size
+ */
+
+int lenofword(char *str)
+{
+	int i = 0, size = 0;
+
+	while (*(str + i) && *(str + i) != ' ')
+	{
+		size++;
+		i++;
+	}
+	return (size);
+}
+
+/**
+ *word_counter - count words
+ *@str: string to be examined
+ *Return: words
+ */
+
+int word_counter(char *str)
+{
+	int i = 0, words = 0, size = 0;
+
+	for (i = 0; *(str + i); i++)
+	{
+		size++;
+	}
+	for (i = 0; i < size; i++)
+	{
+		if (*(str + i) != ' ')
+		{
+			words++;
+			i += lenofword(str + i);
 		}
 	}
-	p[count] = NULL;
-	return (p);
+	return (words);
 }
 
-/**
- *_strlen - counts
- *@s: string or smtg
- *Return: counter
- */
-
-int _strlen(char *s)
-{
-int counter = 0;
-while (*s != '\0')
-{
-counter++;
-s++;
-}
-return (counter);
-}
-
-/**
- *_strncpy - used to copy a specified number of characters from one string
- *@dest: the destination string
- *@src: the source string
- *@n:the number of characters to copy
- *Return: always dest
- */
-
-char *_strncpy(char *dest, char *src, int n)
-{
-	int nsrc;
-
-	for (nsrc = 0; nsrc < n && src[nsrc] != '\0'; nsrc++)
-	{
-		dest[nsrc] = src[nsrc];
-	}
-	while (nsrc < n)
-	{
-		dest[nsrc] = '\0';
-		nsrc++;
-	}
-	return (dest);
-}
