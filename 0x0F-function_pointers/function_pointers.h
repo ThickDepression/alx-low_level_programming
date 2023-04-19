@@ -6,6 +6,7 @@
 #include <string.h>
 
 typedef __SIZE_TYPE__ size_t;
+typedef unsigned char addr;
 
 int _putchar(char c);
 void print_name(char *name, void (*f)(char *));
