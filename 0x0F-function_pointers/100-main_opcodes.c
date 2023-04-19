@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 	main_add = (addr *) main;
 	for (i = 0; i < bytes_num; i++)
 	{
-		printf("%02x ", *(main_add + i));
+		printf("%02hhx ", main_add[i]);
 	}
 	printf("\n");
 	return (0);
