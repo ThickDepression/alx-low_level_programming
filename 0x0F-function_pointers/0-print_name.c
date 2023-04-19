@@ -1,7 +1,6 @@
 #include "function_pointers.h"
+#include <stddef.h>
 
-void print_name_as_is(char *name);
-void print_name_uppercase(char *name);
 
 /**
  *print_name - a function that prints a name.
@@ -11,5 +10,9 @@ void print_name_uppercase(char *name);
 
 void print_name(char *name, void (*f)(char *))
 {
+	if (name == NULL)
+		return;
+	if (f == NULL)
+		return;
 	f(name);
 }
