@@ -13,14 +13,14 @@ int main(int argc, char *argv[])
 	int num1, num2;
 	char *opr;
 
-	num1 = atoi(argv[1]);
-	num2 = atoi(argv[3]);
-	opr = argv[2];
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
+	num1 = atoi(argv[1]);
+	num2 = atoi(argv[3]);
+	opr = argv[2];
 	if (opr[1] != '\0' || get_op_func(opr) == NULL)
 	{
 		printf("Error\n");
@@ -30,23 +30,3 @@ int main(int argc, char *argv[])
 	printf("%d\n", result);
 	return (0);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
