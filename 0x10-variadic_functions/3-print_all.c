@@ -36,7 +36,8 @@ void print_args(const char *format, va_list args)
 			default:
 				break;
 		}
-		sep = ", ";
+		if (format[x + 1] != '\0')
+			sep = ", ";
 		x++;
 	}
 	printf("\n");
