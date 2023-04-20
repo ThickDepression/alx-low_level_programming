@@ -7,15 +7,12 @@
  */
 void print_args(const char *format, va_list args)
 {
-	char *str, *sep;
+	char *str, *sep = "";
 	int x = 0;
 
 
 	while (format != NULL && format[x] != '\0')
 	{
-		sep = ", ";
-		if (format[x + 1] == '\0')
-			sep = "";
 		switch (format[x])
 		{
 			case 'c':
@@ -39,6 +36,7 @@ void print_args(const char *format, va_list args)
 			default:
 				break;
 		}
+		sep = ", ";
 		x++;
 	}
 	printf("\n");
