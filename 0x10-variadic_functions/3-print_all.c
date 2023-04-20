@@ -38,8 +38,6 @@ void print_args(const char *format, va_list args)
 			default:
 				break;
 		}
-		if (format[x + 1] != '\0')
-			sep = ", ";
 		x++;
 	}
 	printf("\n");
