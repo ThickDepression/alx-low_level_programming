@@ -1,7 +1,5 @@
 #include "variadic_functions.h"
 
-void print_s(char *str, char *sp);
-
 /**
  * print_args - prints the arguments
  * @format: a list of types of arguments
@@ -10,11 +8,12 @@ void print_s(char *str, char *sp);
 void print_args(const char *format, va_list args)
 {
 	char *str, *sep = "";
+	int x = 0;
 
 
-	while (*format)
+	while (format != NULL && format[x] != '\0')
 	{
-		switch (*format++)
+		switch (format[x])
 		{
 			case 'c':
 				printf("%s%c", sep, va_arg(args, int));
@@ -38,6 +37,7 @@ void print_args(const char *format, va_list args)
 				break;
 		}
 		sep = ", ";
+		x++;
 	}
 	printf("\n");
 }
