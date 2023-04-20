@@ -32,7 +32,10 @@ void print_args(const char *format, va_list args)
 			case 's':
 				s = va_arg(args, char *);
 				if (s == NULL)
+				{
 					printf("%s(nil)", sep);
+					break;
+				}
 				printf("%s%s", sep, s);
 				break;
 			default:
