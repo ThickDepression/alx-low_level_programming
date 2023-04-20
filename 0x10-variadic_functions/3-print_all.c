@@ -9,36 +9,30 @@ void print_s(char *str, char *sp);
  */
 void print_args(const char *format, va_list args)
 {
-	char *sep = "";
-	int i;
-	char c;
-	double f;
-	char *s;
+	char *str, *sep = "";
+
 
 	while (*format)
 	{
 		switch (*format++)
 		{
 			case 'c':
-				c = va_arg(args, int);
-				printf("%s%c", sep, c);
+				printf("%s%c", sep, va_arg(args, int));
 				break;
 			case 'i':
-				i = va_arg(args, int);
-				printf("%s%d", sep, i);
+				printf("%s%d", sep, va_arg(args, int));
 				break;
 			case 'f':
-				f = va_arg(args, double);
-				printf("%s%f", sep, f);
+				printf("%s%f", sep, va_arg(args, double));
 				break;
 			case 's':
-				s = va_arg(args, char *);
-				if (s == NULL)
+				str = va_arg(args, char *);
+				if (str == NULL)
 				{
 					printf("%s(nil)", sep);
 					break;
 				}
-				printf("%s%s", sep, s);
+				printf("%s%s", sep, str);
 				break;
 			default:
 				break;
