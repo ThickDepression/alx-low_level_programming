@@ -33,7 +33,12 @@ void print_args(const char *format, va_list args)
 				break;
 			case 's':
 				s = va_arg(args, char *);
-				print_s(s, sep);
+				if (s == NULL)
+				{
+					printf("%s(nil)", sep);
+					break;
+				}
+				printf("%s%s", sep, s);
 				break;
 			default:
 				break;
@@ -54,19 +59,4 @@ void print_all(const char * const format, ...)
 	va_start(args, format);
 	print_args(format, args);
 	va_end(args);
-}
-
-/**
-  *print_s - a  function that print string
-  *@s: the string
-  *@sep: separator
-  */
-void print_s(char *s, char *sep)
-{
-	if (s == NULL)
-	{
-		printf("(nil)");
-		return;
-	}
-	printf("%s%s", sep, s);
 }
