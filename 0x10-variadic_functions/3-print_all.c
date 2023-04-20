@@ -1,8 +1,10 @@
 #include "variadic_functions.h"
 
+void print_s(char *str, char *sp);
+
 /**
- * print_args - prints the arguments in a variable argument list
- * @format: the format string that specifies the types of the arguments
+ * print_args - prints the arguments
+ * @format: a list of types of arguments
  * @args: the variable argument list
  */
 void print_args(const char *format, va_list args)
@@ -31,12 +33,7 @@ void print_args(const char *format, va_list args)
 				break;
 			case 's':
 				s = va_arg(args, char *);
-				if (s == NULL)
-				{
-					printf("%s(nil)", sep);
-					break;
-				}
-				printf("%s%s", sep, s);
+				print_s(s, sep);
 				break;
 			default:
 				break;
@@ -57,4 +54,19 @@ void print_all(const char * const format, ...)
 	va_start(args, format);
 	print_args(format, args);
 	va_end(args);
+}
+
+/**
+  *print_s - a  function that print string
+  *@s: the string
+  *@sep: separator
+  */
+void print_s(char *s, char *sep)
+{
+	if (s == NULL)
+	{
+		printf("(nil)");
+		return;
+	}
+	printf("%s%s", sep, s);
 }
