@@ -2,7 +2,7 @@
 
 /**
  *free_listint - frees lists
- *@pointer to a node
+ *@head: pointer to a node
  */
 
 void free_listint(listint_t *head)
