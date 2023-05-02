@@ -1,26 +1,31 @@
 #include "lists.h"
 
 /**
- *print_listint_safe - prints the list
- *@head: node
- *Return: returns num of nodes
-*/
-
+ * print_listint_safe - prints the list.
+ * @head: node
+ * Return: the num of nodes
+ */
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t count = 0;
-	const listint_t *crnt = head;
+	const listint_t *current = head, *loop_checker;
+	size_t counter = 0;
 
-	while (crnt != NULL)
+	while (current != NULL)
 	{
-		printf("[%p] %d\n", (void *)crnt, crnt->n);
-		count++;
-		if (crnt <= crnt->next)
+		printf("[%p] %d\n", (void *)current, current->n);
+		counter++;
+		loop_checker = head;
+		while (loop_checker != current)
 		{
-			printf("-> [%p] %d\n", (void *)crnt->next, crnt->next->n);
-			exit(98);
+			if (current->next == loop_checker)
+			{
+				printf("-> [%p] %d\n", (void *)current->next, current->next->n);
+				exit(98);
+			}
+			loop_checker = loop_checker->next;
 		}
-		crnt = crnt->next;
+		current = current->next;
 	}
-	return (count);
+	return (counter);
 }
+
