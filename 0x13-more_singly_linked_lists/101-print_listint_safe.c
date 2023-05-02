@@ -5,27 +5,29 @@
  * @head: node
  * Return: the num of nodes
  */
+
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *current = head, *loop_checker;
-	size_t counter = 0;
+	int counter = 0;
+	const listint_t *current = head;
+	const listint_t *loop_checker[1024] = {NULL};
+	int i;
 
 	while (current != NULL)
 	{
-		printf("[%p] %d\n", (void *)current, current->n);
-		counter++;
-		loop_checker = head;
-		while (loop_checker != current)
+		for (i = 0; i <= counter; i++)
 		{
-			if (current->next == loop_checker)
+			if (loop_checker[i] == current)
 			{
-				printf("-> [%p] %d\n", (void *)current->next, current->next->n);
+				printf("-> [%p] %d\n", (void *)current, current->n);
 				return (counter);
 			}
-			loop_checker = loop_checker->next;
 		}
+
+		printf("[%p] %d\n", (void *)current, current->n);
+		loop_checker[counter] = current;
+		counter++;
 		current = current->next;
 	}
 	return (counter);
 }
-
