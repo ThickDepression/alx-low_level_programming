@@ -5,7 +5,7 @@
  *@h: head of the list
  *@idx: the index
  *@n: data
- *Return:  the address of the new node
+ *Return: the address of the new node
  */
 
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
@@ -22,7 +22,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	{
 		new_node->next = *h;
 		new_node->prev = NULL;
-		if (*h)
+	if (*h)
 			(*h)->prev = new_node;
 		*h = new_node;
 		return (new_node);
@@ -43,9 +43,13 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		free(new_node);
 		return (NULL);
 	}
+	if (current->next)
+		current->prev->next = new_node;
+	else
+		*h = new_node;
 	new_node->next = current;
 	new_node->prev = current->prev;
-	current->prev->next = new_node;
 	current->prev = new_node;
 	return (new_node);
 }
+
