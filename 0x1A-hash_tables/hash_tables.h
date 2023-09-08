@@ -88,7 +88,7 @@ void hash_table_print(const hash_table_t *ht);
 
 /* 6-hash_table_delete.c */
 void hash_table_delete(hash_table_t *ht);
-
+void delete_hash_nodes_recursive(hash_node_t *node);
 /* 100-sorted_hash_table.c */
 shash_table_t *shash_table_create(unsigned long int size);
 shash_node_t *add_n_shash(shash_node_t **, const char *, const char *);
