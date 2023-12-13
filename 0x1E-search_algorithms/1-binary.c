@@ -13,12 +13,8 @@ void printArray(int *array, int left_index, int right_index)
 
 	printf("Searching in array: ");
 	for (i = left_index; i <= right_index; i++)
-	{
-		printf(" %d", array[i]);
-		if (i < right_index)
-			printf(",");
-	}
-	printf("\n");
+		printf("%d, ", array[i]);
+	printf("%d\n", array[i]);
 }
 
 /**
@@ -56,5 +52,5 @@ int binary_search(int *array, size_t size, int value)
 {
 	if (!array)
 		return (-1);
-return (binary_search_help(array, value, 0, (int)size - 1));
+	return (binary_search_help(array, value, 0, (int)size - 1));
 }
