@@ -5,7 +5,7 @@
 
 int linear_search(int *array, size_t size, int value);
 int binary_search(int *array, size_t size, int value);
-int binary_search_heper(int *array, int value, int left_index, int right_index);
+int binary_search_help(int *array, int value, int left_index, int right_index);
 void printArray(int *array, int left_index, int right_index);
 int jump_search(int *array, size_t size, int value);
 
