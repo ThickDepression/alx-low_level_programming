@@ -39,9 +39,9 @@ int binary_search_help(int *array, int value, int left_index, int right_index)
 	if (array[mid] == value)
 		return (mid);
 	else if (array[mid] > value)
-		return (binary_search_heper(array, value, left_index, mid - 1));
+		return (binary_search_help(array, value, left_index, mid - 1));
 	else
-		return (binary_search_heper(array, value, mid + 1, right_index));
+		return (binary_search_help(array, value, mid + 1, right_index));
 }
 /**
  *binary_search - a function that searches for a value in a sorted
@@ -56,5 +56,5 @@ int binary_search(int *array, size_t size, int value)
 {
 	if (!array)
 		return (-1);
-	return (binary_search_heper(array, value, 0, (int)size - 1));
+return (binary_search_help(array, value, 0, (int)size - 1));
 }
